@@ -1,41 +1,59 @@
-# HBCD EEG Utilities
+# HBCD-MADE- an automated developmental EEG preprocessing pipeline
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15483798.svg)](https://doi.org/10.5281/zenodo.15483798) [![HBCD_EEG_Utilities](https://img.shields.io/badge/NMIND-17%2F42-orange?logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiNDRDdGMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTMuMzc3NTIgNS4wODI0MUMzIDUuNjIwMjggMyA3LjIxOTA3IDMgMTAuNDE2N1YxMS45OTE0QzMgMTcuNjI5NCA3LjIzODk2IDIwLjM2NTUgOS44OTg1NiAyMS41MjczQzEwLjYyIDIxLjg0MjQgMTAuOTgwNyAyMiAxMiAyMkMxMy4wMTkzIDIyIDEzLjM4IDIxLjg0MjQgMTQuMTAxNCAyMS41MjczQzE2Ljc2MSAyMC4zNjU1IDIxIDE3LjYyOTQgMjEgMTEuOTkxNFYxMC40MTY3QzIxIDcuMjE5MDcgMjEgNS42MjAyOCAyMC42MjI1IDUuMDgyNDFDMjAuMjQ1IDQuNTQ0NTQgMTguNzQxNyA0LjAyOTk2IDE1LjczNTEgMy4wMDA3OUwxNS4xNjIzIDIuODA0NzJDMTMuNTk1IDIuMjY4MjQgMTIuODExNCAyIDEyIDJDMTEuMTg4NiAyIDEwLjQwNSAyLjI2ODI0IDguODM3NzIgMi44MDQ3Mkw4LjI2NDkxIDMuMDAwNzlDNS4yNTgzMiA0LjAyOTk2IDMuNzU1MDMgNC41NDQ1NCAzLjM3NzUyIDUuMDgyNDFaIi8+Cjwvc3ZnPgo=)](https://www.nmind.org/proceedings/hbcd-eeg-utilities/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17306540.svg)](https://doi.org/10.5281/zenodo.17306540) [![HBCD_EEG_Utilities](https://img.shields.io/badge/NMIND-17%2F42-orange?logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiNDRDdGMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTMuMzc3NTIgNS4wODI0MUMzIDUuNjIwMjggMyA3LjIxOTA3IDMgMTAuNDE2N1YxMS45OTE0QzMgMTcuNjI5NCA3LjIzODk2IDIwLjM2NTUgOS44OTg1NiAyMS41MjczQzEwLjYyIDIxLjg0MjQgMTAuOTgwNyAyMiAxMiAyMkMxMy4wMTkzIDIyIDEzLjM4IDIxLjg0MjQgMTQuMTAxNCAyMS41MjczQzE2Ljc2MSAyMC4zNjU1IDIxIDE3LjYyOTQgMjEgMTEuOTkxNFYxMC40MTY3QzIxIDcuMjE5MDcgMjEgNS42MjAyOCAyMC42MjI1IDUuMDgyNDFDMjAuMjQ1IDQuNTQ0NTQgMTguNzQxNyA0LjAyOTk2IDE1LjczNTEgMy4wMDA3OUwxNS4xNjIzIDIuODA0NzJDMTMuNTk1IDIuMjY4MjQgMTIuODExNCAyIDEyIDJDMTEuMTg4NiAyIDEwLjQwNSAyLjI2ODI0IDguODM3NzIgMi44MDQ3Mkw4LjI2NDkxIDMuMDAwNzlDNS4yNTgzMiA0LjAyOTk2IDMuNzU1MDMgNC41NDQ1NCAzLjM3NzUyIDUuMDgyNDFaIi8+Cjwvc3ZnPgo=)](https://www.nmind.org/proceedings/hbcd-eeg-utilities/)
 
-The [HBCD EEG Utilities](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities) repository contains `HBCD-EEG-Utilities.m`, a MATLAB script that computes EEG derivatives from HBCD EEG .set files that have been processed with the HBCD-MADE pipeline. 
+This page serves as documentation for the HBCD-MADE pipeline, an adapted version of the Maryland Analysis of Developmental EEG (MADE) pipeline (Debnath et al., 2020) designed for use with data from the Healthy Brain and Child Development (HBCD) study. The GitHub repository for the MADE pipeline upon which HBCD-MADE is based can be found here, and a publication describing the original pipeline can be found here.
 
-This script is designed for users of HBCD EEG data who wish to use derivatives developed by the HBCD EEG Working Group. See [Derivatives and ERP Specifications](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/derivatives_ERPspecs/) for a description of outputs.  
+The HBCD-MADE pipeline will run preprocessing on BIDS-formatted data with most EEG files being the .set file format. All metadata required for running the HBCD-MADE pipeline is present within the .set files themselves, and other BIDS metadata will not be referenced during processing. In general, HBCD-MADE’s functionality is roughly as follows:
 
-`HBCD_EEG_Utilities.m` calls on a series of functions contained in `HBCD-EEG-Utilities/supplemental files`.
-Functionality of the software is as follows:
+![flowchart](flowchart.png)
 
-- Load HBCD EEG .set files 
-- Computes [derivatives](https://hbcd-eeg-utilities.readthedocs.io/en/latest/derivatives_ERPspecs/) for each selected task 
-- Saves trial-level and summary statistics output per participant for the VEP, MMN, and FACE tasks 
-- Saves power spectrum output for the RS task 
-- Writes subject-level summary statistics and trial measures output tables as .csv files 
-- Concatenates all subjects' summary statistics output into a single spreadsheet for each task 
-- Concatenates all subjects' trial measures output into a single spreadsheet for each task
+1. Identify all session-level EEG data for a given recording session.
+2. Iterate through all EEG files for the identified session, downsample the data, delete the outer layer of channels (which are often noisy in infant populations), and filter each file with the desired high-pass/low-pass settings.
+3. Merge all task files together.
+4. Check whether any electrodes are outliers at the session level. This is done by using FASTER (Nolan, 2010). In short, for each electrode, the following measures will be calculated to judge outlier status, and any electrodes that have deviations greater than 3 SDs on any given measure will be excluded from further analysis:
+*   The average temporal correlation to other electrodes
+* The Hurst exponent (measuring the self-similarity within each electrode’s time signal
+* The signal variance
+5. Run through ICA on the electrodes:
+* Create a temporary copy of the EEG signal high passed at 1Hz for ICA
+* Create 1s epochs and remove those with outlier characteristics
+* Generate independent components (ICs) on good electrodes and good epochs
+* Classify the ICs into categories (such as blink) based on spatial and temporal characteristics
+* Subtract the bad ICs from the original data
+6. Separate the merged data back into individual tasks
+7. Epoch task-based data based on event markers
+8. Remove epochs that still have high voltage fluctuations.
+9. Interpolate over bad channels within epochs.
+10. Interpolate deleted channels across epochs.
+11. Re-reference the data to the average reference.
+12. Save the final output consisting of cleaned and epoched EEG data.
 
-## Functionality
+## Contributors
+**Original Contributors to MADE pipeline:**
 
-The following MATLAB scripts and .json files in the HBCD-EEG-Utilities repository are required for processing. 
+* Ranjan Debnath (ranjan.ju@gmail.com)
+* George A. Buzzell (gbuzzell@fiu.edu)
+* Santiago Morales (santiago.morales@usc.edu)
+* Stephanie Leach (stephanie-leach@uiowa.edu)
+* Maureen Elizabeth Bowers (maureenbowers@gmail.com)
+* Nathan A. Fox (fox@umd.edu)
 
-    |__ HBCD-EEG-Utilities/
-        |
-        |__ HBCD_EEG_Utilities.m #load data, compute mean amplitude, generate output tables
-        |
-        |__ supplemental files/
-            |
-            |__compute_peaks_latencies.m #compute adaptive mean and latency measures for VEP
-            |__concatenate_files_summary.m #combine all subjects' summary statistics into one .csv
-            |__concatenate_trial_measures.m #combine all subjects' trial data into one .csv
-            |__get_Cluster.m #define clusters used for ROIs
-            |__grab_settings.m #read in processing settings from proc_settings_HBCD.json
-            |__RS_ERP_Topo_Indv.m #calculates power values for RS and save output to .csv files
-            |
-            |__proc_settings_HBCD.json #specify processing settings
-            
+**Past Contributors:**
+
+* Martin Antunez Garcia (mantunez@umd.edu)
+* Lydia Yoder (lyoder@umd.edu)
+
+**Ongoing Contributors:**
+
+* Erik Lee (eex6144@umn.edu)
+* Jessica Norris (jnorri10@umd.edu)
+* Kira Ashton (kashton7@umd.edu)
+* Marco McSweeney (mmcsw1@umd.edu)
+* Savannah McNair (smcnair1@umd.edu)
+* Trisha Maheshwari (tmahesh@umd.edu)
+* Whitney E. Kasenetz (kasenetz@umd.edu)
+* Dylan Gilbreath (dylangil@umd.edu)
             
 ### Contents 
 
