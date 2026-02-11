@@ -67,6 +67,7 @@ This folder contains all data saved early in the processing pipeline after filte
 
 </details>
 
+
 <details>
 
 <summary> ./merged_data </summary>
@@ -74,6 +75,7 @@ This folder contains all data saved early in the processing pipeline after filte
 Immediately after filtering, tasks are merged together into one file and re-saved into this folder. Tasks present in the merged .fdt file are listed in the corresponding .json file.
 
 </details>
+
 
 <details>
 
@@ -88,11 +90,17 @@ After data are merged into one file, they undergo the following operations and a
 * ICA
 
 * run adjustedADJUST to identify artifact-containing independent components- see [Leach et al., 2020](https://onlinelibrary.wiley.com/doi/10.1111/psyp.13566) for details. Output from adjustedADJUST is written to `SUBSES_adjust_report.csv` and contains IC labels assigned by the algorithm.  
+
 </details>
  
+
  <details>
 
 <summary> ./processed_data </summary>
+
+The `processed_data` folder contains MADE derivatives and a preprocessing report.  See here (Whitney add link) for descriptions of MADE derivatives. 
+
+</details>
 
 # Output by task 
 
@@ -240,6 +248,6 @@ Epoch-level derivatives for RS.
 Subject-level plot visualizing power spectral density for each channel across the 1-50Hz frequency range. Data for this plot originates from `SUBSES_task-RS-dbPowerSpectra.csv`. See below for an example:
  ![PSD plot](PSDplot.png)
 
-</details>
+
 
 
