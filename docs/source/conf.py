@@ -30,6 +30,7 @@ exclude_patterns = []
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+myst_enable_extensions = ["html_admonition", "html_image"]
 
 # If your main document is not index.rst, uncomment and specify it
 # master_doc = 'index'

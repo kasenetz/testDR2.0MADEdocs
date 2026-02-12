@@ -66,9 +66,6 @@ The following output folders and files are created throughout processing within 
 **FDT**- field data table (FDT) files contain EEG data resaved across different stages of processing.
 
 ## HBCD-MADE output: 
-(expand for contents)
-
-
 
 ### ./filtered_data folder
 

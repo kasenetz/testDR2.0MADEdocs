@@ -1,6 +1,6 @@
 # HBCD-MADE- an automated developmental EEG preprocessing pipeline
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14194452.svg)](https://doi.org/10.5281/zenodo.14194452) [![HBCD_EEG_Utilities](https://img.shields.io/badge/NMIND-17%2F42-orange?logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiNDRDdGMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTMuMzc3NTIgNS4wODI0MUMzIDUuNjIwMjggMyA3LjIxOTA3IDMgMTAuNDE2N1YxMS45OTE0QzMgMTcuNjI5NCA3LjIzODk2IDIwLjM2NTUgOS44OTg1NiAyMS41MjczQzEwLjYyIDIxLjg0MjQgMTAuOTgwNyAyMiAxMiAyMkMxMy4wMTkzIDIyIDEzLjM4IDIxLjg0MjQgMTQuMTAxNCAyMS41MjczQzE2Ljc2MSAyMC4zNjU1IDIxIDE3LjYyOTQgMjEgMTEuOTkxNFYxMC40MTY3QzIxIDcuMjE5MDcgMjEgNS42MjAyOCAyMC42MjI1IDUuMDgyNDFDMjAuMjQ1IDQuNTQ0NTQgMTguNzQxNyA0LjAyOTk2IDE1LjczNTEgMy4wMDA3OUwxNS4xNjIzIDIuODA0NzJDMTMuNTk1IDIuMjY4MjQgMTIuODExNCAyIDEyIDJDMTEuMTg4NiAyIDEwLjQwNSAyLjI2ODI0IDguODM3NzIgMi44MDQ3Mkw4LjI2NDkxIDMuMDAwNzlDNS4yNTgzMiA0LjAyOTk2IDMuNzU1MDMgNC41NDQ1NCAzLjM3NzUyIDUuMDgyNDFaIi8+Cjwvc3ZnPgo=)](https://www.nmind.org/proceedings/hbcd-made/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14194452.svg)](https://doi.org/10.5281/zenodo.14194452) [![HBCD-MADE](https://img.shields.io/badge/NMIND-17%2F42-orange?logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiNDRDdGMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTMuMzc3NTIgNS4wODI0MUMzIDUuNjIwMjggMyA3LjIxOTA3IDMgMTAuNDE2N1YxMS45OTE0QzMgMTcuNjI5NCA3LjIzODk2IDIwLjM2NTUgOS44OTg1NiAyMS41MjczQzEwLjYyIDIxLjg0MjQgMTAuOTgwNyAyMiAxMiAyMkMxMy4wMTkzIDIyIDEzLjM4IDIxLjg0MjQgMTQuMTAxNCAyMS41MjczQzE2Ljc2MSAyMC4zNjU1IDIxIDE3LjYyOTQgMjEgMTEuOTkxNFYxMC40MTY3QzIxIDcuMjE5MDcgMjEgNS42MjAyOCAyMC42MjI1IDUuMDgyNDFDMjAuMjQ1IDQuNTQ0NTQgMTguNzQxNyA0LjAyOTk2IDE1LjczNTEgMy4wMDA3OUwxNS4xNjIzIDIuODA0NzJDMTMuNTk1IDIuMjY4MjQgMTIuODExNCAyIDEyIDJDMTEuMTg4NiAyIDEwLjQwNSAyLjI2ODI0IDguODM3NzIgMi44MDQ3Mkw4LjI2NDkxIDMuMDAwNzlDNS4yNTgzMiA0LjAyOTk2IDMuNzU1MDMgNC41NDQ1NCAzLjM3NzUyIDUuMDgyNDFaIi8+Cjwvc3ZnPgo=)](https://www.nmind.org/proceedings/hbcd-made/)
 
 This page serves as documentation for the HBCD-MADE pipeline, an adapted version of the Maryland Analysis of Developmental EEG (MADE) pipeline (Debnath et al., 2020) designed for use with data from the Healthy Brain and Child Development (HBCD) study. The GitHub repository for the MADE pipeline upon which HBCD-MADE is based can be found here, and a publication describing the original pipeline can be found here.
 
@@ -43,14 +43,15 @@ The HBCD-MADE pipeline will run preprocessing on BIDS-formatted data with most E
 
 * Martin Antunez Garcia (mantunez@umd.edu)
 * Lydia Yoder (lyoder@umd.edu)
+* Marco McSweeney (mmcsw1@umd.edu)
+* Savannah McNair (smcnair1@umd.edu)
+* Jessica Norris (jnorri10@umd.edu)
+* Erik Lee (eex6144@umn.edu)
 
 **Ongoing Contributors:**
 
-* Erik Lee (eex6144@umn.edu)
-* Jessica Norris (jnorri10@umd.edu)
+* Alicia Vallorani (avallora@umd.edu)
 * Kira Ashton (kashton7@umd.edu)
-* Marco McSweeney (mmcsw1@umd.edu)
-* Savannah McNair (smcnair1@umd.edu)
 * Trisha Maheshwari (tmahesh@umd.edu)
 * Whitney E. Kasenetz (kasenetz@umd.edu)
 * Dylan Gilbreath (dylangil@umd.edu)
@@ -59,7 +60,6 @@ The HBCD-MADE pipeline will run preprocessing on BIDS-formatted data with most E
 
 - [Installation](https://hbcd-eeg-utilities.readthedocs.io/en/latest/installation/)
 - [Usage & Tutorial](https://hbcd-eeg-utilities.readthedocs.io/en/latest/tutorial/)
-- [How to Download HBCD EEG Data](https://hbcd-eeg-utilities.readthedocs.io/en/latest/downloading-data/)
 - [Derivatives and ERP Specifications](https://hbcd-eeg-utilities.readthedocs.io/en/latest/derivatives_ERPspecs/)
 - [Expected Outputs](https://hbcd-eeg-utilities.readthedocs.io/en/latest/expected-outputs/)
 - [Help](https://hbcd-eeg-utilities.readthedocs.io/en/latest/help/)
