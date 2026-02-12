@@ -104,9 +104,11 @@ After data are merged into one file, they undergo the following operations and a
 
 ### ./processed_data folder
 
-The `processed_data` folder contains all MADE derivatives.  See here (Whitney add link) for descriptions of MADE derivatives. 
+The `processed_data` folder contains all MADE derivatives.  See "Derivatives and ERP Specifications" for descriptions of MADE derivatives. 
 
 ### MADE preprocessing report and specification files
+
+#### MADE preprocessing report 
 
 The MADE preprocessing report is automatically generated for each session and contains a summary of data processing. Some entries will be the same for all tasks in a given subject because the EEG is merged across tasks for portions of preprocessing. See [Debnath2020] for more information on MADE preprocessing. The following columns are present-
 
@@ -142,34 +144,9 @@ The following variables within the MADE preprocessing report represent the numbe
 | MMN_PreDev | MMN | mismatch negativity, standard stimulus preceding deviant stimulus |
 | MMN_Dev | MMN | mismatch negativity, deviant stimulus |
 
-# Output by task 
-
-Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/main/docs/csv_data_dictionary_derivatives.csv) for a data dictionary defining the fields in each .csv output file. 
+#### MADE specification file
 
 ### Faces task (FACE)
-
-**1- FACE Trial Measures Output**: `SUBSES_task-FACE-ERPTrialMeasures.csv`
-
-Trial-level derivatives for the FACE task include mean amplitude.
-
-| Variable Name | Description                              |
-|---------------|------------------------------------------|
-| Condition | inverted, object, uprightInv, uprightObj |
-| TrialNum | trial index |
-| MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
-
-
-**2- FACE Summary Statistics Output**: `SUBSES_task-FACE-ERPSummaryStatistics.csv`
-
-Subject-level derivatives for the FACE task include mean amplitude and SME.
-
-| Variable Name | Description                              |
-|---------------|------------------------------------------|
-| Condition | inverted, object, uprightInv, uprightObj |
-| NTrials | number of trials retained per condition |
-| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
-| SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
-
 
 ### Mismatch Negativity (MMN)
 
