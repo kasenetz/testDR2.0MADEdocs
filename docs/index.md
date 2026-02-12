@@ -60,9 +60,9 @@ The HBCD-MADE pipeline will run preprocessing on BIDS-formatted data with most E
             
 ## Contents 
 
-- [Installation](https://hbcd-eeg-utilities.readthedocs.io/en/latest/installation/)
-- [Usage & Tutorial](https://hbcd-eeg-utilities.readthedocs.io/en/latest/tutorial/)
-- [Processing Settings and Configuration](https://hbcd-eeg-utilities.readthedocs.io/en/latest/proc_settings/)
-- [Expected Outputs](https://hbcd-eeg-utilities.readthedocs.io/en/latest/expected-outputs/)
-- [Derivatives and ERP Specifications](https://hbcd-eeg-utilities.readthedocs.io/en/latest/derivatives_ERPspecs/)
-- [Help](https://hbcd-eeg-utilities.readthedocs.io/en/latest/help/)
+- [Installation](https://docs-hbcd-made.readthedocs.io/en/latest/installation/)
+- [Usage & Tutorial](https://docs-hbcd-made.readthedocs.io/en/latest/tutorial/)
+- [Processing Settings and Configuration](https://docs-hbcd-made.readthedocs.io/en/latest/proc_settings/)
+- [Expected Outputs](https://docs-hbcd-made.readthedocs.io/en/latest/expected-outputs/)
+- [Derivatives and ERP Specifications](https://docs-hbcd-made.readthedocs.io/en/latest/derivatives_ERPspecs/)
+- [Help](https://https://docs-hbcd-made.readthedocs.io/en/latest/help/)

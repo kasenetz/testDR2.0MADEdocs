@@ -1,8 +1,8 @@
-# Installation
+# HBCD-MADE Container Installation & Usage
 
 ## HBCD-MADE Container Usage
 
-We recommend using the HBCD-MADE container when processing large amounts of data.
+We recommend using containerized HBCD-MADE when processing large amounts of data.
 The container for HBCD-MADE can be found on [Docker Hub](https://hub.docker.com/r/dcanumn/hbcd-made/tags).
 A tutorial on how to use containers is located [here](https://docker-curriculum.com/). It can be downloaded with Singularity as follows (click
 [here](https://docs.sylabs.io/guides/latest/user-guide/) for
@@ -10,17 +10,13 @@ a Singularity user guide):
 
    `singularity pull hbcd_made_latest.sif docker://dcanumn/hbcd-made:1.0.9`
 
-## Usage
 
-The design of the application is meant to follow general 
+The design of HBCD-MADE is meant to follow general 
 [BIDS-App guidelines](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005209).
 For more details on general usage principles of BIDS-Apps, see the linked documentation.
 
-As described in the installation section, this tool is meant to be
-interacted with in containerized form. The example below shows the
-general layout for how you may want to interact with the container
-to conduct processing if you have the container downloaded as a
-singularity image:
+The example below shows the general layout for how you may want to interact with the container
+to conduct processing if you have the container downloaded as a singularity image:
 
 
         container_path=/path/to/container.sif
@@ -32,11 +28,6 @@ singularity image:
          -B $output_dir:/output \
          -B $settings_file:/settings_file/file.json \
          $container_path /bids /output participant /settings_file/file.json
-
-
-To see more specific information about how this tool expects
-the inputs to be formatted (i.e. file naming conventions), 
-see the data requirements page.
 
 The intended workflow of running HBCD-MADE involves utilizing a containerized version of the pipeline in Singularity. If the container is being used to run the pipeline, the inputs will be formatted as follows:
 
@@ -70,7 +61,7 @@ so that Singularity can access it.
      /json_folder/proc_settings_HBCD.json \
      /output_dir \
      /bids_dir \
-     sub-144696 \
+     sub-123456 \
     ses-V03
    
 ## Command-Line Arguments

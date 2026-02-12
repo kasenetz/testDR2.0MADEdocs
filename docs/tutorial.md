@@ -1,23 +1,6 @@
 #Usage & Tutorial
 
-# Resources & Tutorial
-
-
-## Helpful Links 
-
-- [BIDS-App guidelines](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005209)
-
-- [Docker Hub](https://hub.docker.com/r/dcanumn/hbcd-made/tags)
-
-- [EEGLAB](https://eeglab.org/)
-
-- [HBCD EEG Tasks](https://github.com/ChildDevLab/Tasks)>
-
-- [HBCD-MADE pipeline GitHub repository](https://github.com/DCAN-Labs/HBCD-MADE)
-
-- [Singularity User Guide](https://docs.sylabs.io/guides/latest/user-guide/)
-
-- [OSF Site containing HBCD Test Data](https://osf.io/wg46a/files/osfstorage)
+# Resources & Local Processing Tutorial
 
 ## Input Data
 
