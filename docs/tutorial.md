@@ -28,8 +28,10 @@ Processing settings .json: `proc_settings_HBCD.json`
 
 ## HBCD-MADE Local Processing Tutorial
 
-```{note}
-These steps will configure the user to run local processing. However, due to the computational demands of EEG pre-processing, it is recommended to use the HBCD-MADE container for HPC instead of locally processing data files. 
+```{note} These steps will configure the user to run local processing. However, due to the computational demands of EEG pre-processing, it is recommended to use the HBCD-MADE container for HPC instead of locally processing data files. 
+
+> [!NOTE]
+> These steps will configure the user to run local processing. However, due to the computational demands of EEG pre-processing, it is recommended to use the HBCD-MADE container for HPC instead of locally processing data files. 
 
 1. Download example data.
 
