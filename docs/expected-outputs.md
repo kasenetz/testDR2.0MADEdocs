@@ -65,14 +65,12 @@ The following output folders and files are created throughout processing within 
 
 **FDT**- field data table (FDT) files contain EEG data resaved across different stages of processing.
 
-## HBCD-MADE output folders: 
+## HBCD-MADE output: 
 (expand for contents)
 
-<details>
 
 
-<summary> ./filtered_data </summary>
-
+### ./filtered_data folder
 
 This folder contains all data saved early in the processing pipeline after filtering but prior to bad channel detection. Each EEG task administered will have a corresponding .set and .fdt file stored within this folder. These data have undergone the following operations:
 
@@ -89,27 +87,12 @@ This folder contains all data saved early in the processing pipeline after filte
 * 60 Hz low-pass with 10 Hz transition band using a noncausal FIR filter
 
 
-</details>
-
-
-<details>
-
-
-<summary> ./merged_data </summary>
-
+### ./merged_data folder
 
 Immediately after filtering, tasks are merged together into one file and re-saved into this folder. Tasks present in the merged .fdt file are listed in the corresponding .json file.
 
 
-</details>
-
-
-
-<details>
-
-
-<summary> ./ica_data </summary>
-
+### ./ica_data folder
 
 After data are merged into one file, they undergo the following operations and are re-saved into `ica_data/` with ICA weights:
 
@@ -122,20 +105,45 @@ After data are merged into one file, they undergo the following operations and a
 * run adjustedADJUST to identify artifact-containing independent components- see [Leach et al., 2020](https://onlinelibrary.wiley.com/doi/10.1111/psyp.13566) for details. Output from adjustedADJUST is written to `SUBSES_adjust_report.csv` and contains IC labels assigned by the algorithm.  
 
 
-</details>
- 
+### ./processed_data folder
+
+The `processed_data` folder contains all MADE derivatives.  See here (Whitney add link) for descriptions of MADE derivatives. 
+
+### MADE preprocessing report and specification files
+
+The MADE preprocessing report is automatically generated for each session and contains a summary of data processing. Some entries will be the same for all tasks in a given subject because the EEG is merged across tasks for portions of preprocessing. See [Debnath2020] for more information on MADE preprocessing. The following columns are present-
 
 
- <details>
+| Column Name | Description                              |
+|---------------|------------------------------------------|
+| datafile_name | file name of EEG data |
+| subject_id | unique subject identifier |
+| task | FACE, MMN, RS, VEP |
+| line_noise | estimate of how much electrical line noise is present in the EEG signal. Values of 1 indicate no line noise, values of 0 indicate pure line noise. |
+| reference_for_faster | reference electrode used by the FASTER algorithm used for bad channel detection (Nolan et al., 2010). |
+| faster_bad_channels | list of channels identified by FASTER algorithm as being artifactual, or not representative of brain activity. |
+| ica_prep_bad_channels | channels deleted by FASTER before ICA. |
+| length_ica_data | how much continuous data (in seconds) was used for independent component analysis. |
+| total_ICs | number of independent components identified. |
+| ICs_removed | independent components removed by adjusted-ADJUST (Leach et al, 2020). |
+| total_epochs_pre_artifact_rej | number of epochs collected. |
+| total_epochs_post_artifact_rej | number of epochs retained after epoch-level artifact rejection. |
+| total_channels_interp | number of channels interpolated using spline interpolation after bad channel removal. |
+| avg_chan_interp_artifact_rej | average number of channels interpolated per epoch using spline interpolation for each task. |
+| std_chan_interp_artifact_rej | standard deviation of the number of channels removed per epoch for each task. |
+| range_chan_interp_artifact_rej | range of number of channels interpolated per epoch. |
 
+The following variables within the MADE preprocessing report represent the number of trials retained after artifact rejection from each condition of each task.
 
-<summary> ./processed_data </summary>
-
-
-The `processed_data` folder contains MADE derivatives and a preprocessing report.  See here (Whitney add link) for descriptions of MADE derivatives. 
-
-
-</details>
+| Variable Name | Task | Description                     | 
+|---------------|------|---------------------------------|
+|FACE_UpInv |FACE | face stimuli in block 1 (upright faces vs inverted faces) |
+| FACE_Inv | FACE | inverted face stimuli in block 1 (upright faces vs inverted faces) |
+| FACE_Obj |FACE | object stimuli in block 2 (upright faces vs objects) |
+| FACE_UpObj | FACE | FACE task, upright face stimuli in block 2 (upright faces vs objects) |
+| MMN_Standard | MMN | mismatch negativity, standard stimulus |
+| MMN_PreDev | MMN | mismatch negativity, standard stimulus preceding deviant stimulus |
+| MMN_Dev | MMN | mismatch negativity, deviant stimulus |
 
 # Output by task 
 
