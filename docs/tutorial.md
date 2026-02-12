@@ -1,33 +1,28 @@
 #Usage & Tutorial
 
-
-.. include:: links.rst
-
-.. _citation:
-
-
 # Resources & Tutorial
 
 
 ## Helpful Links 
 
-[BIDS-App guidelines](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005209)
+- [BIDS-App guidelines](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005209)
 
-[Docker Hub](https://hub.docker.com/r/dcanumn/hbcd-made/tags)
+- [Docker Hub](https://hub.docker.com/r/dcanumn/hbcd-made/tags)
 
-[EEGLAB](https://eeglab.org/)
+- [EEGLAB](https://eeglab.org/)
 
-[HBCD EEG Tasks](https://github.com/ChildDevLab/Tasks)>
+- [HBCD EEG Tasks](https://github.com/ChildDevLab/Tasks)>
 
-[HBCD-MADE pipeline GitHub repository](https://github.com/DCAN-Labs/HBCD-MADE)
+- [HBCD-MADE pipeline GitHub repository](https://github.com/DCAN-Labs/HBCD-MADE)
 
-[Singularity User Guide](https://docs.sylabs.io/guides/latest/user-guide/)
+- [Singularity User Guide](https://docs.sylabs.io/guides/latest/user-guide/)
 
-[OSF Site containing HBCD Test Data](https://osf.io/wg46a/files/osfstorage)
+- [OSF Site containing HBCD Test Data](https://osf.io/wg46a/files/osfstorage)
 
-# Input Data
+## Input Data
 
-HBCD-MADE takes raw, BIDS formatted HBCD data in .set file format. Please visit the [HBCD Data Release Docs](https://docs.hbcdstudy.org/latest/) for more information once the data are released. 
+HBCD-MADE takes raw, BIDS formatted HBCD data in .set file format. 
+Please visit the [HBCD Data Release Docs](https://docs.hbcdstudy.org/latest/) for more information.
 
 - [HBCD EEG Overview](https://docs.hbcdstudy.org/latest/instruments/eeg/#overview-eeg-protocols)
 
@@ -47,24 +42,23 @@ EEG data matrix in .fdt: `./SUBSES_task-<label>_acq-eeg_eeg.fdt`
 
 Processing settings .json: `proc_settings_HBCD.json`
 
-## HBCD EEG Task Information
-
-Task descriptions are available on the centralized HBCD Data Release Docs, and HBCD EEG Task files can be downloaded from our [GitHub repository](https://github.com/ChildDevLab/Tasks)
-
 
 ## HBCD-MADE Local Processing Tutorial
 
-> [!NOTE]
-> These steps will configure the user to run local processing. However, due to the computational demands of EEG pre-processing, it is recommended to use the HBCD-MADE container for HPC instead of locally processing data files. 
+
+> Note: These steps will configure the user to run local processing. However, due to the computational demands of EEG pre-processing, it is recommended to use the HBCD-MADE container for HPC instead of locally processing data files. 
 
 1. Download example data.
-	Click [here](https://osf.io/wg46a/files/osfstorage) to download the raw and fully processed EEG file for one session. 
+
+	> Click [here](https://osf.io/wg46a/files/osfstorage) to download the raw and fully processed EEG file for one session. 
 
 2. Install HBCD-MADE
-	Visit our [GitHub](https://github.com/ChildDevLab/HBCD-MADE) to download the HBCD-MADE Pipeline.
+
+	> Visit our [GitHub](https://github.com/ChildDevLab/HBCD-MADE) to download the HBCD-MADE Pipeline.
 
 3. Install dependencies
-	HBCD-MADE is known to work well with MATLAB version 2024a. The Signal Processing Toolbox and Statistics/Machine Learning Toolboxes must also be installed into MATLAB. Users may elect to install the Parallel Processing Toolbox for faster processing. EEGLAB must also be installed and installation instructions can be found [here](https://sccn.ucsd.edu/eeglab/downloadtoolbox.php). We recommend using version eeglab2023.0.
+
+	> HBCD-MADE is known to work well with MATLAB version 2024a. The Signal Processing Toolbox and Statistics/Machine Learning Toolboxes must also be installed into MATLAB. Users may elect to install the Parallel Processing Toolbox for faster processing. EEGLAB must also be installed and installation instructions can be found [here](https://sccn.ucsd.edu/eeglab/downloadtoolbox.php). We recommend using version eeglab2023.0.
  
 4. **Initialize ‘test_HBCD_MADE.m’**
 
