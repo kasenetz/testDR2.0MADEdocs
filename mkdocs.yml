@@ -4,6 +4,7 @@ theme:
   name: readthedocs
 
 markdown_extensions:
+  - admonition
   - toc:
       permalink: '🔗'  
 
