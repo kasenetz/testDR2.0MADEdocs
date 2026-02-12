@@ -33,7 +33,11 @@ See below for the ROIs that are used to compute ERPs. The full list of ROIs can 
 
  ![ROI clusters](ROIs.png)
  
-**Please note that most ERPs are scored using age-dependent time-windows.** ERPs are computed separately for each task condition in the FACE and MMN task. See tables below for details. 
+ !!! note
+    **Please note that most ERPs are scored using age-dependent time-windows.**
+
+
+ERPs are computed separately for each task condition in the FACE and MMN task. See tables below for details. 
 
 #### FACE Task 
 ERP derivatives for the FACE task contain the following components at the specified time windows and ROIs:

@@ -82,5 +82,7 @@ These supported global settings are specified in the proc_settings_HBCD_containe
 
 - score_ROIs: Regions of interest to use for plotting and scoring SME, ERP, and peak measures.
 
-Note: DIN markers are inserted by a StimTracker and denote specific types of stimuli. DIN2 markers represent auditory stimuli from computer speakers, and DIN3 markers represent visual stimuli captured by a photocell on the participant monitor. DIN2 flags will always be present in MMN, and will appear in the FACE and VEP task only in cases when the researcher prompted “attention getter” stimuli which involve an auditory signal to bring the participant’s attention back to the computer screen. See HBCD EEG Task Information for more information.
+!!! note
+    DIN markers are inserted by a StimTracker and denote specific types of stimuli. DIN2 markers represent auditory stimuli from computer speakers, and DIN3 markers represent visual stimuli captured by a photocell on the participant monitor. DIN2 flags will always be present in MMN, and will appear in the FACE and VEP task only in cases when the researcher prompted “attention getter” stimuli which involve an auditory signal to bring the participant’s attention back to the computer screen. See HBCD EEG Task Information for more information.
+
 
