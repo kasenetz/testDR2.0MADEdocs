@@ -6,7 +6,7 @@ This page serves as documentation for the HBCD-MADE pipeline, an adapted version
 
 ## Overview of MADE processing 
 
-The HBCD-MADE pipeline will run preprocessing on BIDS-formatted data with most EEG files being the .set file format. All metadata required for running the HBCD-MADE pipeline is present within the .set files themselves, and other BIDS metadata will not be referenced during processing. In general, HBCD-MADE’s functionality is roughly as follows:
+The HBCD-MADE pipeline will run preprocessing on BIDS-formatted data with most EEG files being the .set file format. All metadata required for running the HBCD-MADE pipeline is present within the .set files themselves, and other BIDS metadata will not be referenced during processing. In general, HBCD-MADE’s functionality is as follows:
 
 ![flowchart](flowchart.png)
 
@@ -14,15 +14,15 @@ The HBCD-MADE pipeline will run preprocessing on BIDS-formatted data with most E
 2. Iterate through all EEG files for the identified session, downsample the data, delete the outer layer of channels (which are often noisy in infant populations), and filter each file with the desired high-pass/low-pass settings.
 3. Merge all task files together.
 4. Check whether any electrodes are outliers at the session level. This is done by using FASTER (Nolan, 2010). In short, for each electrode, the following measures will be calculated to judge outlier status, and any electrodes that have deviations greater than 3 SDs on any given measure will be excluded from further analysis:
-*   The average temporal correlation to other electrodes
-* The Hurst exponent (measuring the self-similarity within each electrode’s time signal
-* The signal variance
+    * The average temporal correlation to other electrodes
+    * The Hurst exponent (measuring the self-similarity within each electrode’s time signal
+    * The signal variance
 5. Run through ICA on the electrodes:
-* Create a temporary copy of the EEG signal high passed at 1Hz for ICA
-* Create 1s epochs and remove those with outlier characteristics
-* Generate independent components (ICs) on good electrodes and good epochs
-* Classify the ICs into categories (such as blink) based on spatial and temporal characteristics
-* Subtract the bad ICs from the original data
+    * Create a temporary copy of the EEG signal high passed at 1Hz for ICA
+    * Create 1s epochs and remove those with outlier characteristics
+    * Generate independent components (ICs) on good electrodes and good epochs
+    * Classify the ICs into categories (such as blink) based on spatial and temporal characteristics
+    * Subtract the bad ICs from the original data
 6. Separate the merged data back into individual tasks
 7. Epoch task-based data based on event markers
 8. Remove epochs that still have high voltage fluctuations.
