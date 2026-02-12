@@ -5,32 +5,52 @@ The output structure of HBCD-MADE will mimic the input BIDS structure. If you ha
 The output of HBCD-MADE will primarily be found in `.set` [EEGLAB](https://eeglab.org/) formatted data structures and `.csv` files. Different stages of data processing will be saved, but the final data elements to be used for subsequent analyses will be found in the ./processed_data folder. If you load an EEG file from this folder, its `data` field will have dimensions `<num_electrodes, num_samples, num_epochs>`, with the epochs placed around the events specified in the `proc_settings.json` file. The `.set/.fdt` files saved by HBCD-MADE can be loaded back into Matlab with EEGLAB’s `pop_loadset` function, or loaded in python using MNE.
 
 The following output folders and files are created throughout processing within each subject’s output directory:
+
 ```
-|__ made/
-   |__ sub-<label>/ #individual subject folder
-   |   |__ ses-<label>/
-   |       |__ eeg/
-   |           |__ filtered_data/
-   |               |__ sub-<label>_ses-<label>_task-<label>_acq-eeg_run-<label>_desc-filtered_eeg.set
-   |               |__ sub-<label>_ses-<label>_task-<label>_acq-eeg_run-<label>_desc-filtered_eeg.fdt
-   |           |__ ica_data/
-   |               |__ sub-<label>_ses-<label>_adjustReport
-   |               |__ sub-<label>_ses-<label>_mergedICA_eeg.set
-   |               |__ sub-<label>_ses-<label>_mergedICA_eeg.fdt
-   |           |__ merged_data/
-   |               |__ sub-<label>_ses-<label>_merged_eeg.set
-   |               |__ sub-<label>_ses-<label>_merged_eeg.fdt
-   |           |__ processed_data/
-   |               |__ sub-<label>_ses-<label>_task-<label>_acq-eeg_run-<label>_desc-filteredprocessed_eeg.set
-   |               |__ sub-<label>_ses-<label>_task-<label>_acq-eeg_run-<label>_desc-filteredprocessed_eeg.fdt
-   |               |__ sub-<label>_ses-<label>_task-<label>_acq-eeg_run<label>_ERP.mat #for VEP, FACE, MMN
-   |               |__ sub-<label>_ses-<label>_task-RS_RS_spectra.mat #for RS
-   |               |__ sub-<label>_ses-<label>_task-<label>_desc-<label>_ERP.jpg
-   |               |__ sub-<label>_ses-<label>_task-<label>_desc-<label>_diffERP.jpg
-   |               |__ sub-<label>_ses-<label>_task-<label>_desc-<label>_topo.jpg
-   |           |__ sub-<label>_ses-<label>_acq-eeg_preprocessingReport.csv
-   |           |__ sub-<label>_ses-<label>_task-<label>_acq-eeg_run-<label>_MADEspecification.csv
+ |__ made/
+        |__ sub-{ID}/
+            |__ ses-{V0X}/
+                |__ eeg/
+                    |__ filtered_data/
+                    |   |__ sub-{ID}_ses-{V0X}_task-<FACE|MMN|RS|VEP>_acq-eeg_run-{X}_desc-filtered_eeg.fdt
+                    |   |__ sub-{ID}_ses-{V0X}_task-<FACE|MMN|RS|VEP>_acq-eeg_run-{X}_desc-filtered_eeg.set
+                    |
+                    |__ ica_data/
+                    |   |__ sub-{ID}_ses-{V0X}_adjustReport.txt
+                    |   |__ sub-{ID}_ses-{V0X}_desc-mergedICA_eeg.fdt
+                    |   |__ sub-{ID}_ses-{V0X}_desc-mergedICA_eeg.set
+                    | 
+                    |__ merged_data/
+                    |   |__ sub-{ID}_ses-{V0X}_desc-merged_eeg.fdt
+                    |   |__ sub-{ID}_ses-{V0X}_desc-merged_eeg.json
+                    |   |__ sub-{ID}_ses-{V0X}_desc-merged_eeg.set
+                    | 
+                    |__ processed_data/
+                    |   |__ sub-{ID}_ses-{V0X}_task-FACE_desc-<F-TOPO>_topo.jpg
+                    |   |__ sub-{ID}_ses-{V0X}_task-FACE_desc-oz_<diffERP|ERP>.jpg
+                    |   |__ sub-{ID}_ses-{V0X}_task-MMN_desc-oz_<MMN-TOPO>_topo.jpg
+                    |   |__ sub-{ID}_ses-{V0X}_task-MMN_desc-t7t8_<diffERP|ERP>.jpg
+                    |   |__ sub-{ID}_ses-{V0X}_task-<FACE|MMN>_desc-{IMG}.jpg
+                    |   |__ sub-{ID}_ses-{V0X}_task-RS_desc-allCh_PSD.jpg
+                    |   |__ sub-{ID}_ses-{V0X}_task-RS_LogPowerSpectra.csv
+                    |   |__ sub-{ID}_ses-{V0X}_task-RS_dbPowerSpectra.csv
+                    |   |__ sub-{ID}_ses-{V0X}_task-RS_AbsPowerSpectra.csv
+                    |   |__ sub-{ID}_ses-{V0X}_task-<FACE|MMN|VEP>_ERPSummaryStats.csv
+                    |   |__ sub-{ID}_ses-{V0X}_task-<FACE|MMN|VEP>_ERPTrialMeasures.csv
+                    |   |__ sub-{ID}_ses-{V0X}_task-VEP_<desc-oz_ERP|topo>.jpg
+                    |   |__ sub-{ID}_ses-{V0X}_task-<FACE|MMN|VEP>_acq-eeg_run-{X}_ERP.mat
+                    |   |__ sub-{ID}_ses-{V0X}_task-RS_spectra.mat
+                    |   |__ sub-{ID}_ses-{V0X}_task-<FACE|MMN|RS|VEP>_acq-eeg_run-{X}_desc-filteredprocessed_eeg.fdt
+                    |   |__ sub-{ID}_ses-{V0X}_task-<FACE|MMN|RS|VEP>_acq-eeg_run-{X}_desc-filteredprocessed_eeg.set
+                    | 
+                    |__ sub-{ID}_ses-{V0X}_acq-eeg_preprocessingReport.csv
+                    |__ sub-{ID}_ses-{V0X}_task-<FACE|MMN|RS|VEP>_acq-eeg_run-{X}_MADEspecification.json
+
+# Label Values Legend
+<F-TOPO>: diffInvVsUpr, diffObjVsUp2, inverted, object, upright, upright2
+<MMN-TOPO>: deviant, diffDevVsSta, diffDevVsPre, preDeviant, standard 
 ```
+
 ## HBCD-MADE output contains the following file types:
 
 **JPEG**- topographic and ERP plots.
@@ -49,7 +69,10 @@ The following output folders and files are created throughout processing within 
 (expand for contents)
 
 <details>
+
+
 <summary> ./filtered_data </summary>
+
 
 This folder contains all data saved early in the processing pipeline after filtering but prior to bad channel detection. Each EEG task administered will have a corresponding .set and .fdt file stored within this folder. These data have undergone the following operations:
 
@@ -65,21 +88,28 @@ This folder contains all data saved early in the processing pipeline after filte
 
 * 60 Hz low-pass with 10 Hz transition band using a noncausal FIR filter
 
+
 </details>
 
 
 <details>
+
 
 <summary> ./merged_data </summary>
 
+
 Immediately after filtering, tasks are merged together into one file and re-saved into this folder. Tasks present in the merged .fdt file are listed in the corresponding .json file.
+
 
 </details>
 
 
+
 <details>
 
+
 <summary> ./ica_data </summary>
+
 
 After data are merged into one file, they undergo the following operations and are re-saved into `ica_data/` with ICA weights:
 
@@ -91,14 +121,19 @@ After data are merged into one file, they undergo the following operations and a
 
 * run adjustedADJUST to identify artifact-containing independent components- see [Leach et al., 2020](https://onlinelibrary.wiley.com/doi/10.1111/psyp.13566) for details. Output from adjustedADJUST is written to `SUBSES_adjust_report.csv` and contains IC labels assigned by the algorithm.  
 
+
 </details>
  
 
+
  <details>
+
 
 <summary> ./processed_data </summary>
 
+
 The `processed_data` folder contains MADE derivatives and a preprocessing report.  See here (Whitney add link) for descriptions of MADE derivatives. 
+
 
 </details>
 
