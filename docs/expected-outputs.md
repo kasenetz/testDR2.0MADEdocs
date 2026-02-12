@@ -51,7 +51,7 @@ The following output folders and files are created throughout processing within 
 <MMN-TOPO>: deviant, diffDevVsSta, diffDevVsPre, preDeviant, standard 
 ```
 
-## HBCD-MADE output contains the following file types:
+## HBCD-MADE output file types:
 
 **JPEG**- topographic and ERP plots.
 
@@ -104,13 +104,13 @@ After data are merged into one file, they undergo the following operations and a
 
 ### ./processed_data folder
 
-The `processed_data` folder contains all MADE derivatives.  See "Derivatives and ERP Specifications" for descriptions of MADE derivatives. 
+The `processed_data` folder contains all MADE ERP and resting state power derivatives.  See [Derivatives and ERP Specifications](https://docs-hbcd-made.readthedocs.io/en/latest/derivatives_ERPspecs) for descriptions of MADE derivatives. 
 
-### MADE preprocessing report and specification files
+### Preprocessing report and specification files
 
 #### MADE preprocessing report 
 
-The MADE preprocessing report is automatically generated for each session and contains a summary of data processing. Some entries will be the same for all tasks in a given subject because the EEG is merged across tasks for portions of preprocessing. See [Debnath2020] for more information on MADE preprocessing. The following columns are present-
+The MADE preprocessing report is automatically generated for each session and contains a summary of data processing. Some entries will be the same for all tasks in a given subject because the EEG is merged across tasks for portions of preprocessing. See [Debnath et al., 2020](https://pubmed.ncbi.nlm.nih.gov/32293719/) for more information on MADE preprocessing. The following columns are present-
 
 
 | Column Name | Description                              |
@@ -146,4 +146,4 @@ The following variables within the MADE preprocessing report represent the numbe
 
 #### MADE specification file
 
-For each session processed, HBCD-MADE writes an output file which containing a record of the processing parameters that were specified. See "Processing Settings and Configuration" for a description of the contents of the MADE specification file. 
+For each session processed, HBCD-MADE writes an output file which containing a record of the processing parameters that were specified. See the [Processing Settings and Configuration](https://docs-hbcd-made.readthedocs.io/en/latest/proc_settings) for a description of the contents of the MADE specification file. 

@@ -13,7 +13,7 @@ Questions about the HBCD EEG data release can be sent by creating a help desk ti
 
 - [EEGLAB](https://eeglab.org/)
 
-- [HBCD EEG Tasks](https://github.com/ChildDevLab/Tasks)>
+- [HBCD EEG Tasks](https://github.com/ChildDevLab/Tasks)
 
 - [HBCD-MADE pipeline GitHub repository](https://github.com/DCAN-Labs/HBCD-MADE)
 

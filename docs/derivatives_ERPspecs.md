@@ -25,18 +25,17 @@ Click [here](https://docs.hbcdstudy.org/latest/instruments/eeg/tasks/) to view d
 
 - **Power**: Absolute power (μV²), power (dB), and natural log power for each frequency bin ranging from 1-50Hz.
 
-### Task-based ERP Derivatives
-
 #### Regions of Interest (ROIs)
 
 See below for the ROIs that are used to compute ERPs. The full list of ROIs can also be found on the [GitHub repository for HBCD-MADE](https://github.com/DCAN-Labs/HBCD-MADE/blob/main/proc_settings_HBCD.json).
 
  ![ROI clusters](ROIs.png)
  
- !!! note
-    **Please note that most ERPs are scored using age-dependent time-windows.**
+!!! note
+    Please note that most ERPs are scored using age-dependent time-windows.
 
 
+### Task-based ERP Derivatives
 ERPs are computed separately for each task condition in the FACE and MMN task. See tables below for details. 
 
 #### FACE Task 
@@ -86,7 +85,8 @@ ERP derivatives for the MMN task contain the following components at the specifi
 | MMN  | PreDeviant, Deviant, Standard       | 200-400 ms    | f7f8 | 3-9 |
 | MMN  | PreDeviant, Deviant, Standard       | 200-400 ms    | FCz  | 3-9 |
 
-- Users are advised to score the amplitude of the Mismatch Response (MMR) component by subtracting the amplitude of PreDeviant trials from Deviant trials.
+!!! note
+    Users are advised to score the amplitude of the Mismatch Response (MMR) component by subtracting the amplitude of PreDeviant trials from Deviant trials.
 
 **1- MMN Trial Measures Output**: `SUBSES_task-MMN-ERPTrialMeasures.csv`
 
@@ -110,7 +110,7 @@ Subject-level derivatives for the MMN task include mean amplitude and SME.
 | SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
 
 
-#### VEP Task
+#### Visual Evoked Potential (VEP) Task
 
 ERP derivatives for the VEP task contain the following components at the specified time windows and ROIs:
 
