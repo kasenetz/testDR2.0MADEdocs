@@ -32,35 +32,7 @@ See below for the ROIs that are used to compute ERPs. The full list of ROIs can 
  ![ROI clusters](ROIs.png)
  
 !!! note
-    Please note that most ERPs are scored using age-dependent time-windows. 
-
-### Age-Dependent ERP time windows
-Age-dependent time windows are defined in the [processing settings .json](https://github.com/DCAN-Labs/HBCD-MADE/blob/main/proc_settings_HBCD.json). For each task, the first age bin specified (e.g. 3-6 months) corresponds to the list of time windows in `score_times1`. The number of time windows listed matches the number of `score_ROIs` and the list of `ERP_names`. 
-
-Here's an example of how to interpret the processing settings:
-
- The code below states that for the VEP task in ses-V03, ERPs are scored as follows for participants who were 3-6 months old at EEG acquisition: 
-
-- The N1 component is scored at the Oz cluster between 40 ms - 79 ms
-
-- The P1 component is scored at the Oz cluster between 80 ms - 140 ms
-
-- The N2 component is scored at the Oz cluster between 141 ms - 300 ms. 
-
-`score_times2` defines the time windows for participants who were 6-9 months old at EEG acquisition. Unlike the ERP time windows, the ROI clusters used to score any given ERP are stable across age groups.  
-
-```
-"VEP": {
-    "ses-V03": { 
-        "ERP_dirs": [-1, 1, -1], #Direction of the N1, P1, and N2 components
-        "score_ages": [[3,6],[6,9]], #age bins are 3-6 months and 6-9 months
-        "score_times1":[[40, 79], [80,140], [141, 300]], # ERP time windows for 3-6 month olds for the N1, P1, and N2 components
-        "score_times2":[[40, 79], [80,120], [121, 170]], # ERP time windows for 6-9 month olds for the N1, P1, and N2 components
-        "score_ROIs": ["oz", "oz", "oz"], # Electrode cluser at ERP regions of interest for the N1 P1, and N2 components
-        "ERP_names": ["N1", "P1", "N2"] # list of ERP components scored
-    }
-}
-```
+    Please note that most ERPs are scored using age-dependent time windows. See "Processing Settings and Configuration" for details.  
 
 ### Task-based ERP Derivatives
 ERPs are computed separately for each task condition in the FACE and MMN task. See tables below for details. 
