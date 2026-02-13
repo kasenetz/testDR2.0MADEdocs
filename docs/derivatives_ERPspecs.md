@@ -40,9 +40,12 @@ Age-dependent time windows are defined in the [processing settings .json](https:
 Here's an example of how to interpret the processing settings:
 
  The code below states that for the VEP task in ses-V03, ERPs are scored as follows for participants who were 3-6 months old at EEG acquisition: 
-- N1 component is scored at the Oz cluster between 40 ms - 79 ms
-- P1 component is scored at the Oz cluster between 80 ms - 140 ms
-- N2 component is scored at the Oz cluster between 141 ms - 300 ms. 
+
+- The N1 component is scored at the Oz cluster between 40 ms - 79 ms
+
+- The P1 component is scored at the Oz cluster between 80 ms - 140 ms
+
+- The N2 component is scored at the Oz cluster between 141 ms - 300 ms. 
 
 `score_times2` defines the time windows for participants who were 6-9 months old at EEG acquisition. Unlike the ERP time windows, the ROI clusters used to score any given ERP are stable across age groups.  
 
@@ -57,7 +60,6 @@ Here's an example of how to interpret the processing settings:
         "ERP_names": ["N1", "P1", "N2"] # list of ERP components scored
     }
 }
-
 ```
 
 ### Task-based ERP Derivatives
