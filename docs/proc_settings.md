@@ -78,11 +78,46 @@ These supported global settings are specified in the proc_settings_HBCD_containe
 
 - marker_names: (list of strings) Name of event code markers you want to construct epochs around (e.g., DIN3). If make_dummy_events = true, then this should instead represent the first marker in your EEG file. Dummy events will then be placed after the first instance of this marker.
 
-- score_times: Time ranges (in seconds) to use for plotting and scoring SME, ERP, and peak measures.
+- ERP_dirs: Direction of ERP components listed in "ERP_names". [-1] indicates a negaive-going component, and [1] indicates positive. These values are used to specify whether MADE should search for a positive or negative peak when computing peak latency and adaptive-mean amplitude for a given ERP. 
+
+- score_ages: List of age bins used to compute ERPS with age-dependent time windows. 
+
+- score_times{X}: Time ranges (in seconds) to use for plotting and scoring SME, ERP, and peak measures.
 
 - score_ROIs: Regions of interest to use for plotting and scoring SME, ERP, and peak measures.
+
+- ERP_names: Names of the scored ERP components
+
 
 !!! note
     DIN markers are inserted by a StimTracker and denote specific types of stimuli. DIN2 markers represent auditory stimuli from computer speakers, and DIN3 markers represent visual stimuli captured by a photocell on the participant monitor. DIN2 flags will always be present in MMN, and will appear in the FACE and VEP task only in cases when the researcher prompted “attention getter” stimuli which involve an auditory signal to bring the participant’s attention back to the computer screen. See [HBCD EEG Task Information](https://docs.hbcdstudy.org/latest/instruments/eeg/tasks/#hbcd-eeg-tasks) for more information.
 
+
+### Age-Dependent ERP time windows
+Age-dependent time windows are defined in the [processing settings .json file](https://github.com/DCAN-Labs/HBCD-MADE/blob/main/proc_settings_HBCD.json). For each task, the first age bin specified (e.g. 3-6 months) corresponds to the list of time windows in `score_times1`. The number of time windows listed matches the number of `score_ROIs` and the list of `ERP_names`. 
+
+Here's an example of how to interpret the code specifying the age-dependent ERP time windows:
+
+ The code below states that for the VEP task in ses-V03, ERPs are scored as follows for participants who were 3-6 months old at EEG acquisition: 
+
+- The N1 component is scored at the Oz cluster between 40 ms - 79 ms
+
+- The P1 component is scored at the Oz cluster between 80 ms - 140 ms
+
+- The N2 component is scored at the Oz cluster between 141 ms - 300 ms. 
+
+`score_times2` defines the time windows for participants who were 6-9 months old at EEG acquisition. Unlike the ERP time windows, the ROI clusters used to score any given ERP are stable across age groups.  
+
+```
+"VEP": {
+    "ses-V03": { 
+        "ERP_dirs": [-1, 1, -1], #Direction of the N1, P1, and N2 components
+        "score_ages": [[3,6],[6,9]], #age bins are 3-6 months and 6-9 months
+        "score_times1":[[40, 79], [80,140], [141, 300]], # ERP time windows for 3-6 month olds for the N1, P1, and N2 components
+        "score_times2":[[40, 79], [80,120], [121, 170]], # ERP time windows for 6-9 month olds for the N1, P1, and N2 components
+        "score_ROIs": ["oz", "oz", "oz"], # Electrode cluser at ERP regions of interest for the N1 P1, and N2 components
+        "ERP_names": ["N1", "P1", "N2"] # list of ERP components scored
+    }
+}
+```
 
