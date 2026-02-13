@@ -2,11 +2,11 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14194452.svg)](https://doi.org/10.5281/zenodo.14194452) [![HBCD-MADE](https://img.shields.io/badge/NMIND-17%2F42-orange?logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiNDRDdGMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTMuMzc3NTIgNS4wODI0MUMzIDUuNjIwMjggMyA3LjIxOTA3IDMgMTAuNDE2N1YxMS45OTE0QzMgMTcuNjI5NCA3LjIzODk2IDIwLjM2NTUgOS44OTg1NiAyMS41MjczQzEwLjYyIDIxLjg0MjQgMTAuOTgwNyAyMiAxMiAyMkMxMy4wMTkzIDIyIDEzLjM4IDIxLjg0MjQgMTQuMTAxNCAyMS41MjczQzE2Ljc2MSAyMC4zNjU1IDIxIDE3LjYyOTQgMjEgMTEuOTkxNFYxMC40MTY3QzIxIDcuMjE5MDcgMjEgNS42MjAyOCAyMC42MjI1IDUuMDgyNDFDMjAuMjQ1IDQuNTQ0NTQgMTguNzQxNyA0LjAyOTk2IDE1LjczNTEgMy4wMDA3OUwxNS4xNjIzIDIuODA0NzJDMTMuNTk1IDIuMjY4MjQgMTIuODExNCAyIDEyIDJDMTEuMTg4NiAyIDEwLjQwNSAyLjI2ODI0IDguODM3NzIgMi44MDQ3Mkw4LjI2NDkxIDMuMDAwNzlDNS4yNTgzMiA0LjAyOTk2IDMuNzU1MDMgNC41NDQ1NCAzLjM3NzUyIDUuMDgyNDFaIi8+Cjwvc3ZnPgo=)](https://www.nmind.org/proceedings/hbcdmade/)
 
-This page serves as documentation for the HBCD-MADE pipeline, an adapted version of the Maryland Analysis of Developmental EEG (MADE) pipeline (Debnath et al., 2020) designed for use with data from the Healthy Brain and Child Development (HBCD) study. The GitHub repository for the MADE pipeline upon which HBCD-MADE is based can be found here, and a publication describing the original pipeline can be found here.
+This page serves as documentation for the HBCD-MADE pipeline, an adapted version of the Maryland Analysis of Developmental EEG (MADE) pipeline (Debnath et al., 2020) designed for use with data from the Healthy Brain and Child Development (HBCD) study. The GitHub repository for the MADE pipeline upon which HBCD-MADE is based can be found [here](https://github.com/ChildDevLab/MADE-EEG-preprocessing-pipeline), and a publication describing the original pipeline can be found [here](https://pubmed.ncbi.nlm.nih.gov/32293719/).
 
 ## Overview of MADE processing 
 
-The HBCD-MADE pipeline will run preprocessing on BIDS-formatted data with most EEG files being the .set file format. All metadata required for running the HBCD-MADE pipeline is present within the .set files themselves, and other BIDS metadata will not be referenced during processing. In general, HBCD-MADE’s functionality is as follows:
+The HBCD-MADE pipeline will run preprocessing on BIDS-formatted data with EEG files being in .set and .fdt file format. All metadata required for running the HBCD-MADE pipeline is present within the .set files themselves, and other BIDS metadata will not be referenced during processing. In general, HBCD-MADE’s functionality is as follows:
 
 ![flowchart](flowchart.png)
 

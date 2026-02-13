@@ -7,12 +7,6 @@
 HBCD-MADE takes raw, BIDS formatted HBCD data in .set file format. 
 Please visit the [HBCD Data Release Docs](https://docs.hbcdstudy.org/latest/) for more information.
 
-- [HBCD EEG Overview](https://docs.hbcdstudy.org/latest/instruments/eeg/#overview-eeg-protocols)
-
-- [Contents of Raw HBCD data folders](https://docs-hbcd-made.readthedocs.io/en/latest/data_requirements.html#contents-of-raw-hbcd-data-folders)
-
-- [Required Processing Inputs](https://docs.hbcdstudy.org/latest/instruments/eeg/#overview-eeg-protocols)
-
 ## Required Porcessing Inputs
 
 The following files are required inputs to the HBCD-MADE pipeline:

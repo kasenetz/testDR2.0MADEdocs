@@ -4,7 +4,7 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 
 ## Derivatives by task
 
-Click [here](https://docs.hbcdstudy.org/latest/instruments/eeg/tasks/) to view descriptions of each task.
+Click [here](https://docs.hbcdstudy.org/latest/instruments/eeg/tasks/) to view descriptions of each HBCD EEG task.
 
 `HBCD-MADE.m` computes the following derivatives for each task: 
 
@@ -32,8 +32,17 @@ See below for the ROIs that are used to compute ERPs. The full list of ROIs can 
  ![ROI clusters](ROIs.png)
  
 !!! note
-    Please note that most ERPs are scored using age-dependent time-windows.
+    Please note that most ERPs are scored using age-dependent time-windows. 
 
+### Age-Dependent time windows
+Age-dependent time windows are defined in the [processing settings .json] (https://github.com/DCAN-Labs/HBCD-MADE/blob/main/proc_settings_HBCD.json). For each task, the first age bin specified (e.g. 3-6 months) corresponds to the list of time windows in `score_times1`. The number of time windows listed matches the number of `score_ROIs` and the list of `ERP_names`. 
+
+Here's an example of how to interpret the processing settings. The code below states that for the VEP task, participants who were 3-6 months old at EEG acquisition have their ERPs scored as follows: 
+- N1 component is at Oz cluster between 40 ms -79 ms
+- P1 component is scored at Oz cluster between 80 ms - 140 ms
+- N2 component is scored at Oz cluster between 141 ms - 300 ms. 
+
+`score_times2` defines the time windows for participants who were 6-9 months old at EEG acquisition. Unlike the ERP time windows, the ROI clusters used to score any given ERP is stable across age groups.  
 
 ### Task-based ERP Derivatives
 ERPs are computed separately for each task condition in the FACE and MMN task. See tables below for details. 
