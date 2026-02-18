@@ -55,7 +55,7 @@ Trial-level derivatives for the FACE task include mean amplitude.
 |---------------|------------------------------------------|
 | Condition | inverted, object, uprightInv, uprightObj |
 | TrialNum | trial index |
-| MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
+| MeanAmplitude_{WindowStart}-{WindowEnd}_ROI | Mean amplitude within specified time window at specified ROI |
 
 **2- FACE Summary Statistics Output**: `SUBSES_task-FACE-ERPSummaryStatistics.csv`
 
