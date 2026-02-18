@@ -55,7 +55,7 @@ Trial-level derivatives for the FACE task include mean amplitude.
 |---------------|------------------------------------------|
 | Condition | inverted, object, uprightInv, uprightObj |
 | TrialNum | trial index |
-| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
+| MeanAmplitude_*WindowStart-WindowEnd_ROI* | Mean amplitude within specified time window at specified ROI |
 
 **2- FACE Summary Statistics Output**: `SUBSES_task-FACE-ERPSummaryStatistics.csv`
 
@@ -65,8 +65,8 @@ Subject-level derivatives for the FACE task include mean amplitude and SME.
 |---------------|------------------------------------------|
 | Condition | inverted, object, uprightInv, uprightObj |
 | NTrials | number of trials retained per condition |
-| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
-| SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
+| MeanAmplitude_*WindowStart-WindowEnd_ROI* | Mean amplitude within specified time window at specified ROI |
+| SME_*WindowStart-WindowEnd_ROI* | Standard measurement error during specified time window at specified ROI |
 
 #### Mismatch Negativity/Auditory Oddball (MMN) task
 
@@ -90,7 +90,7 @@ Trial-level derivatives for the MMN task include mean amplitude.
 |---------------|------------------------------------------|
 | Condition | deviant, predeviant, standard |
 | TrialNum | trial index |
-| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
+| MeanAmplitude_*WindowStart-WindowEnd_ROI* | Mean amplitude within specified time window at specified ROI |
 
 **2- MMN Summary Statistics Output**: `SUBSES_task-MMN-ERPSummaryStatistics.csv`
 
@@ -100,8 +100,8 @@ Subject-level derivatives for the MMN task include mean amplitude and SME.
 |---------------|------------------------------------------|
 | Condition | deviant, predeviant, standard |
 | NTrials | number of trials retained per condition |
-| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
-| SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
+| MeanAmplitude_*WindowStart-WindowEnd_ROI* | Mean amplitude within specified time window at specified ROI |
+| SME_*WindowStart-WindowEnd_ROI* | Standard measurement error during specified time window at specified ROI |
 
 #### Visual Evoked Potential (VEP) Task
 
@@ -123,9 +123,9 @@ Trial-level derivatives for the VEP task include mean amplitude, adaptive mean (
 |---------------|------------------------------------------|
 | Condition | VEP |
 | TrialNum | trial index |
-| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
-| Peak_WindowStart-WindowEnd_ROI | Adaptive mean amplitude within specified time window at specified ROI |
-| Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
+| MeanAmplitude_*WindowStart-WindowEnd_ROI* | Mean amplitude within specified time window at specified ROI |
+| Peak_*WindowStart-WindowEnd_ROI* | Adaptive mean amplitude within specified time window at specified ROI |
+| Latency_*WindowStart-WindowEnd_ROI* | Latency to peak within specified time window at specified ROI |
 
 **2- VEP Summary Statistics Output**: `SUBSES_task-VEP-ERPSummaryStatistics.csv`
 
@@ -135,10 +135,10 @@ Subject-level derivatives for the VEP task include SME, mean amplitude, adaptive
 |---------------|------------------------------------------|
 | Condition | VEP |
 | NTrials | number of trials retained per condition |
-| SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
-| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
-| Peak_WindowStart-WindowEnd_ROI | Adaptive mean amplitude within specified time window at specified ROI |
-| Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
+| SME_*WindowStart-WindowEnd_ROI* | Standard measurement error during specified time window at specified ROI |
+| MeanAmplitude_*WindowStart-WindowEnd_ROI* | Mean amplitude within specified time window at specified ROI |
+| Peak_*WindowStart-WindowEnd_ROI* | Adaptive mean amplitude within specified time window at specified ROI |
+| Latency_*WindowStart-WindowEnd_ROI* | Latency to peak within specified time window at specified ROI |
 
 ### Resting State (RS) Power Derivatives
 
