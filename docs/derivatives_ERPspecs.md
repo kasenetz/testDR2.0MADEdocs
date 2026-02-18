@@ -40,18 +40,12 @@ ERPs are computed separately for each task condition in the FACE and MMN task. S
 #### FACE Task 
 ERP derivatives for the FACE task contain the following components at the specified time windows and ROIs:
 
-| Task | Component | Time window | ROI  | Age |
-|------|-----------|-------------|------|-----|
-| FACE | P1        | 75-125 ms     | Oz   | 3-9 |
-| FACE | N290      | 200-390 ms    | P8   | 3-6 |
-| FACE | N290      | 200-340 ms    | P8   | 6-9 |    
-| FACE | N290      | 200-390 ms    | P7   | 3-6 |
-| FACE | N290      | 200-340 ms    | P7   | 6-9 | 
-| FACE | N290      | 200-390 ms    | Oz   | 3-6 |
-| FACE | N290      | 200-340 ms    | Oz   | 6-9 |
-| FACE | P400      | 400-600 ms    | Oz   | 3-6 |                              
-| FACE | P400      | 350-600 ms    | Oz   | 6-9 |
-| FACE | Nc        | 300-650 ms    | FCz  | 3-9 |
+| Task | Component | Time window | ROIs         | Age bins (months) |
+|------|-----------|-------------|--------------|-------------------|
+| FACE | N290      | 200-350 ms  | P8, P7, Oz   | 3-6, 6-9 |
+| FACE | P400      | 350-600 ms  | P8, P7, Oz   | 3-6, 6-9 |    
+| FACE | NC        | 300-600 ms  | FCz          | 3-6, 6-9 |  
+
 
 **1- FACE Trial Measures Output**: `SUBSES_task-FACE-ERPTrialMeasures.csv`
 
@@ -78,11 +72,12 @@ Subject-level derivatives for the FACE task include mean amplitude and SME.
 
 ERP derivatives for the MMN task contain the following components at the specified time windows and ROIs:
 
-| Task | Conditions | Time window | ROI  | Age |
-|------|-----------|-------------|------|-----|
-| MMN  | PreDeviant, Deviant, Standard       | 200-400 ms    | t7t8 | 3-9 |
-| MMN  | PreDeviant, Deviant, Standard       | 200-400 ms    | f7f8 | 3-9 |
-| MMN  | PreDeviant, Deviant, Standard       | 200-400 ms    | FCz  | 3-9 |
+| Task | Component | Time window | ROIs                 | Age bins (months) |
+|------|-----------|-------------|----------------------|-------------------|
+| MMN  | MMR1      | 100-200 ms  | F7F8, F3F4, FCz      |  3-6, 6-9          |
+| MMN  | MMR2      | 200-400 ms  | T7T8, F7F8, F3F4, FCz|  3-6, 6-9          |
+| MMN  | MMR1      | 100-200 ms  | T7T8, F7F8, F3F4, FCz|  9-12, 12-15       |
+| MMN  | MMR2      | 200-450 ms  | T7T8, F7F8, F3F4, FCz|  9-12, 12-15       |
 
 !!! note
     Users are advised to score the amplitude of the Mismatch Response (MMR) component by subtracting the amplitude of PreDeviant trials from Deviant trials.
@@ -108,20 +103,17 @@ Subject-level derivatives for the MMN task include mean amplitude and SME.
 | MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
 | SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
 
-
 #### Visual Evoked Potential (VEP) Task
 
 ERP derivatives for the VEP task contain the following components at the specified time windows and ROIs:
 
-| Task | Component | Time window | ROI  | Age |
-|------|-----------|-------------|------|-----|
-| VEP  | N1        | 40-79 ms      | Oz   | 3-6 |
-| VEP  | N1        | 40-79 ms      | Oz   | 6-9 |
-| VEP  | P1        | 80-140 ms     | Oz   | 3-6 | 
-| VEP  | P1        | 80-120 ms     | Oz   | 6-9 |
-| VEP  | N2        | 141-300 ms    | Oz   | 3-6 |
-| VEP  | N2        | 121-170 ms    | Oz   | 6-9 |
-
+| Task | Component | Time window | ROIs                 | ERP Direction | Age bins (months)     |
+|------|-----------|-------------|----------------------|---------------|-----------------------|
+| VEP  | N1        | 40-79 ms    | Oz                   |   Negative    | 3-6, 6-9, 9-12, 12-15 |
+| VEP  | P1        | 80-140 ms   | Oz                   |   Positive    | 3-6                   |
+| VEP  | P1        | 80-120 ms  | Oz                    |   Positive    | 6-9, 9-12, 12-15      |
+| VEP  | N2        | 141-300 ms  | Oz                   |   Negative    | 3-6                   |
+| VEP  | N2        | 121-170 ms  | Oz                   |   Negative    | 6-9, 9-12, 12-15      |
 
 **1- VEP Trial Measures Output**: `SUBSES_task-VEP-ERPTrialMeasures.csv`
 
